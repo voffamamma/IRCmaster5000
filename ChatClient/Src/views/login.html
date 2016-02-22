@@ -1,4 +1,14 @@
-<form>
-  Nick:<br>
-  <input type="text" name="nick"><br>
-</form>
+<!DOCTYPE html>
+<html ng-app="chatapp">
+	<head>
+		<title>Login</title>
+	</head>
+
+	<body>
+		<form>
+	  		Nick:<br>
+	  	<input type="text" ng-model="name" name="nick"><br>
+		</form>
+		<BUTTON type="button" ng-click="enter()"> Join the chat </button>
+	</body>
+</html>
