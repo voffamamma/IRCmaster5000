@@ -1,22 +1,29 @@
 "use strict";
 
-angular.module('chatapp').controller('LoginController', ['$scope', '$location', function ($scope, $location, $rootScope, $routeParams, socket) {
+angular.module('chatapp').controller('LoginController', ['$scope', '$location', function ($scope, $location, $rootScope, $routeParams, socket) 
+{
 	$scope.name = '';
+	$scope.errorMessage = '';
 
-	$scope.enter = function() {
-		if ($scope.name === '') {
-			//ERROR MSG, NOT EMPTY
-		} else {
-			socket.emit('adduser', $scope.name, function (available) {
+	$scope.enter = function() 
+	{
+		if ($scope.name === '') 
+		{
+			$scope.errorMessage = 'Choose a nick name';
+		} 
+		else 
+		{
+			socket.emit('adduser', $scope.name, function (available) 
+			{
 				if (available) {
 					$location.path('/lobby/' + $scope.name);
 				} else {
-					//ERROR MSG, USER NAME TAKEN!!!
+					$scope.errorMessage = 'This nick name is already in use!';
 				}
 			});
 		}
 	};
-
+}]);
 	//senda a serverinn socket.on
 	//ng-repeat (kalla á lista)
 	//unordered list í hmtl 
