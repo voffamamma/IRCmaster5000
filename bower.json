@@ -1,0 +1,28 @@
+{
+  "name": "IRCmaster5000",
+  "homepage": "https://github.com/voffamamma/IRCmaster5000",
+  "authors": [
+    "stebbihalldors <stebbihalldors@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular-bootstrap": "^1.1.2",
+    "angular-route": "^1.5.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt": "^0.4.5"
+  }
+}

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html ng-app="chatapp">
-	<head>
-		<title>Login</title>
-	</head>
+<div ng-controller="loginController">
 
-	<body>
-		<form>
-	  		Nick:<br>
-	  	<input type="text" ng-model="name" name="nick"><br>
-		</form>
-		<BUTTON type="button" ng-click="enter()"> Join the chat </button>
-	</body>
-</html>
+	<div class="alert alert-danger" ng-cloak ng-show="errorMessage != ''">
+		{{errorMessage}}
+	</div>
+	<div class="form-group">
+		<label for="nick" class="control-label">
+			Nick eh 
+		</label>
+		<input type="text" id="nick" ng-model="nick" class="form-control" name="nick" ng-keypress="login($event)">
+	</div>
+
+	<div>
+		<button type="button" class="btn btn-primary" ng-click="enter()"> Join the chat </button>
+	</div>
+</div>
